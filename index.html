@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VideoHallu: Evaluating and Mitigating Multi-modal Hallucinations for Synthetic Videos</title>
+
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">VideoHallu: Evaluating and Mitigating Multi-modal Hallucinations for Synthetic Videos</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://zli12321.github.io">Zongxia Li</a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a href="https://wuxiyang1996.github.io/">Xiyang Wu</a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/yubin-qin/">Yubin Qin</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/SmashedPython">Hongyang Du</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://guangyaoshi.github.io/">Guangyao Shi</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/SmashedPython">Hongyang Du</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cs.umd.edu/people/dmanocha">Tianyi Zhou</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://users.umiacs.umd.edu/~ying/">Jordan Lee Boyd-Graber</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Maryland, College Park, <sup>2</sup>University of Southern California</span><br>
+            
+            <span class="author-block"><sup>*</sup>Equal Contribution</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/zli12321/VideoHallu/tree/main"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/zli12321/VideoHalluB"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    
+    <div class="columns is-multiline is-centered is-mobile">
+
+      <!-- Image 1 -->
+      <div class="column is-one-quarter has-text-centered">
+        <figure class="image is-4by3">
+          <img src="./images/rooster.gif" alt="Object Hallucination">
+        </figure>
+        <p class="is-size-6">Spatial-temporal Consistancy</p>
+      </div>
+
+      <!-- Image 2 -->
+      <div class="column is-one-quarter has-text-centered">
+        <figure class="image is-4by3">
+          <img src="./images/feather_veo2.gif" alt="Physics Violation">
+        </figure>
+        <p class="is-size-6">Commen Sense Reasoning</p>
+      </div>
+
+      <!-- Image 3 -->
+      <div class="column is-one-quarter has-text-centered">
+        <figure class="image is-4by3">
+          <img src="./images/man_drinking_wine.gif" alt="Temporal Discontinuity">
+        </figure>
+        <p class="is-size-6">Common Sense Reasoning</p>
+      </div>
+
+      <!-- Image 4 -->
+      <div class="column is-one-quarter has-text-centered">
+        <figure class="image is-4by3">
+          <img src="./images/watermelon_explode-ezgif.com-video-to-gif-converter.gif" alt="Misalignment">
+        </figure>
+        <p class="is-size-6">Physics Violation</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Abstract -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Synthetic video generation using foundation models has gained significant attention due to its realism and broad applications. However, while these models excel at generating visually coherent and high-quality video frames, they often overlook commonsense reasoning and physical law violations, leading to abnormal content.
+          </p>
+          <p>
+            Existing score-based evaluations like VideoScore mainly focus on general video quality and do not take these abnormalities into account, nor do they offer interpretable explanations of evaluation results. A more promising evaluation approach is to leverage multi-modal large language models (MLLMs) as interpretable video evaluators, following the approach of FactScore.
+          </p>
+          <p>
+            We introduce <strong>VideoHallu</strong>, a benchmark built from synthetic videos produced by popular models like <em>Veo2</em>, <em>Sora</em>, and <em>Kling</em>, paired with expert-crafted question-answer pairs that are solvable using human-level perception and reasoning across multiple categories.
+          </p>
+          <p>
+            We evaluate several state-of-the-art MLLMs using our benchmark, including GPT-4o, Gemini-2.5-Pro, Qwen-2.5-VL, and frontier models like Video-R1 and VideoChat-R1. Despite their strong performance on real-world video benchmarks such as MVBench and MovieChat, these models struggle and hallucinate on basic commonsense and physics reasoning tasks in synthetic videos—highlighting <strong>synthetic video hallucination</strong> as an underexplored challenge.
+          </p>
+          <p>
+            To address this, we post-train SoTA MLLMs with Group Relative Policy Optimization (GRPO) using both real and synthetic commonsense/physics datasets. Our results show improved accuracy over base models, achieving the highest performance across all tested systems. This highlights the value of integrating high-quality counterexamples to strengthen MLLMs' reasoning capabilities.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body has-text-centered">
+      <img src="./images/fig1.png" alt="VideoHallu Teaser" style="max-width: 100%; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);" />
+    </img>
+    <h2 class="subtitle has-text-centered">
+      <strong>VideoHallu</strong> is a benchmark and dataset designed to assess and improve the multi-modal reasoning abilities of large video-language models (MLLMs) on synthetic videos. It reveals that MLLMs often fail to detect abnormal events in AI-generated content—such as physics violations or object hallucinations.
+    </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">🧠 The Dawn of MLLMs in Synthetic Videos</h2>
+
+    <!-- Example 1 -->
+    <div class="box">
+      <details open>
+        <summary><strong>🎬 Video:</strong> Quail Transforming into Rooster</summary>
+        <p class="has-text-centered">
+          <em>Prompt (Sora): Generate a quail and a rooster celebrating New Year.</em><br>
+          <img src="images/rooster.gif" width="700" alt="Rooster GIF"><br>
+          <img src="./images/131021746146018_.pic.jpg" style="zoom:100%;" alt="Rooster Still Frame">
+        </p>
+      </details>
+    </div>
+
+    <!-- Example 2 -->
+    <div class="box">
+      <details open>
+        <summary><strong>🎬 Video:</strong> Object Falling and Law of Physics</summary>
+        <p class="has-text-centered">
+          <em>Prompt (Veo2): A feather and a heavy rock are released at the same height and begin to fall to the ground on Earth.</em><br>
+          <img src="images/feather_veo2.gif" width="700" alt="Feather GIF"><br>
+          <img src="./images/130281746130630_.pic.jpg" style="zoom:100%;" alt="Feather Still Frame">
+        </p>
+      </details>
+    </div>
+
+    <!-- Example 3 -->
+    <div class="box">
+      <details open>
+        <summary><strong>🎬 Video:</strong> Object Contact Abnormalities</summary>
+        <p class="has-text-centered">
+          <em>Prompt (Sora): Generate a man drinking up a cup of wine.</em><br>
+          <img src="images/man_drinking_wine.gif" width="700" alt="Wine GIF"><br>
+          <img src="./images/130291746131015_.pic.jpg" style="zoom:100%;" alt="Wine Still Frame">
+        </p>
+      </details>
+    </div>
+
+    <!-- Example 4 -->
+    <div class="box">
+      <details open>
+        <summary><strong>🎬 Video:</strong> Breaking Process</summary>
+        <p class="has-text-centered">
+          <em>Prompt (Sora): Generate the sequence showing a bullet being shot into a watermelon.</em><br>
+          <img src="images/watermelon_explode-ezgif.com-video-to-gif-converter.gif" width="700" alt="Watermelon GIF"><br>
+          <img src="./images/130301746131484_.pic.jpg" style="zoom:100%;" alt="Watermelon Still Frame">
+        </p>
+      </details>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
